@@ -7,7 +7,7 @@ function App() {
     <div className={styles.container}>
       <Widget
         organization="TheCreatorProject"
-        logo="https://images.unsplash.com/photo-1468421870903-4df1664ac249?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=3052&q=80"
+        logo="https://images.unsplash.com/photo-1501951653466-8df816debe46?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTIyfHxsb2dvJTIwd2hpdGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
       />
     </div>
   )
