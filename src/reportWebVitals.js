@@ -1,8 +1,9 @@
-import WebVitals from 'web-vitals'
+import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals'
+const vb = { getCLS, getFID, getFCP, getLCP, getTTFB }
 
 const reportWebVitals = (onPerfEntry) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
-    WebVitals.then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+    vb.then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
       getCLS(onPerfEntry)
       getFID(onPerfEntry)
       getFCP(onPerfEntry)

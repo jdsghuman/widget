@@ -1,0 +1,32 @@
+@import '../../styles/variables';
+
+.button {
+  text-align: center;
+  align-self: center;
+  padding: 0.5em 1em;
+  margin: 0.5em 1em;
+  border-radius: 2px;
+  border: none;
+  box-sizing: border-box;
+  transition: all 500ms $ease-in--quint;
+  cursor: pointer;
+  outline: none;
+  &--primary {
+    background: none;
+    border: 2px solid $palette--primary;
+    color: $palette--primary;
+    &:hover {
+      background: $palette--primary;
+      color: $palette--white;
+    }
+  }
+  &--accent {
+    background: $palette--accent;
+    color: $palette--white;
+    border: 2px solid $palette--accent;
+    &:hover {
+      background: $palette--primary;
+      color: $palette--white;
+    }
+  }
+}
