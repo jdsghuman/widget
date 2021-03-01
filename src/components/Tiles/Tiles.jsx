@@ -6,7 +6,7 @@ const cx = classNames.bind(styles)
 
 const Tiles = ({ activeTile, amountRaised, onClick }) => {
   return (
-    <div className={styles.container}>
+    <div data-testid="tile" className={styles.container}>
       {defaultDollarAmount.map((amount, i) => {
         return (
           <div
