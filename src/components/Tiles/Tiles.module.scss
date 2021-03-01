@@ -7,22 +7,20 @@
   margin: 5px auto;
   .tile {
     margin: 2px;
-    background: #ffffff;
+    background: $palette--accent;
     border-radius: 5%;
-    padding: 6px 25px;
+    padding: 3px 20px;
     width: 22px;
     box-shadow: $box-shadow;
-    color: #888888;
+    color: #ffffff;
     font-family: 'Lato', sans-serif;
     cursor: pointer;
     transition: all 0.5s $ease-in--quint;
     &:hover {
-      color: #ffffff;
-      background: rgb(37, 44, 53);
+      background: $palette--primary;
     }
     &--active {
-      color: #ffffff;
-      background: rgb(37, 44, 53);
+      background: $palette--primary;
     }
   }
 }
