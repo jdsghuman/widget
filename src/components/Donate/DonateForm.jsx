@@ -27,11 +27,13 @@ const DonateForm = ({
         <span className={styles.input__currency}>
           <input
             ref={formRef}
+            type="number"
+            min="1"
+            step="1"
             value={amountRaised}
             onChange={onChangeInput}
             className={styles.input}
             placeholder="0"
-            type="text"
           />
         </span>
       </div>

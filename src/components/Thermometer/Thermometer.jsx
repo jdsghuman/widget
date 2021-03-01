@@ -5,19 +5,19 @@ import Confirm from '../Confirm/Confirm'
 import DonateForm from '../Donate/DonateForm'
 import Home from '../Home/Home'
 import Tiles from '../Tiles/Tiles'
+import { getCampaignData, setCampaignAmountRaised } from '../Utils/Data'
 import styles from './Thermometer.module.scss'
 
 const Thermometer = ({ formRef, organization, themeColor, themeContrast }) => {
-  const [name, setName] = useState('')
+  const [organizationName, setOrganizationName] = useState('')
   const [amountRaised, setAmountRaised] = useState('')
   const [goal, setGoal] = useState(0)
+  const [totalRaised, setTotalRaised] = useState(0)
   const [activeTile, setActiveTile] = useState(false)
   const [currentStep, setCurrentStep] = useState(0)
 
-  // Mock call to get data
-
-  const setDefaultTileAmount = (amount) => {
-    setAmountRaised(amount)
+  const setDefaultTileAmount = (amountRaised) => {
+    setAmountRaised(amountRaised)
     setActiveTile(true)
   }
 
@@ -27,6 +27,9 @@ const Thermometer = ({ formRef, organization, themeColor, themeContrast }) => {
   }
 
   const onAction = () => {
+    if (currentStep === 1) {
+      setCampaignAmountRaised(amountRaised, organization)
+    }
     if (currentStep < 2) {
       return setCurrentStep(currentStep + 1)
     }
@@ -38,9 +41,11 @@ const Thermometer = ({ formRef, organization, themeColor, themeContrast }) => {
         return (
           <Home
             onAction={onAction}
-            organization={organization}
+            goal={goal}
+            organizationName={organizationName}
             themeColor={themeColor}
             themeContrast={themeContrast}
+            totalRaised={totalRaised}
           />
         )
       case 1:
@@ -65,6 +70,12 @@ const Thermometer = ({ formRef, organization, themeColor, themeContrast }) => {
     currentStep === 1 && formRef.current.focus()
   }, [currentStep])
 
+  // Mock API call to get updated data
+  useEffect(async () => {
+    const data = await getCampaignData(organization)
+    setTotalRaised(data.amountRaised)
+  }, [currentStep])
+
   useEffect(() => {
     if (currentStep === 2) {
       setTimeout(() => {
@@ -74,6 +85,14 @@ const Thermometer = ({ formRef, organization, themeColor, themeContrast }) => {
       }, 3000)
     }
   }, [currentStep])
+
+  // Mock call to get data
+  useEffect(async () => {
+    const data = await getCampaignData(organization)
+    setGoal(data.goal)
+    setTotalRaised(data.amountRaised)
+    setOrganizationName(data.name)
+  }, [])
 
   return <div className={styles.container}>{getWidgetScreen()}</div>
 }
