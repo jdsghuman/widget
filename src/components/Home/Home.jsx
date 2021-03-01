@@ -2,27 +2,31 @@ import React from 'react'
 import Button from '../Button/Button'
 import Header from '../Header/Header'
 import ProgressBar from '../ProgressBar/ProgressBar'
-import { truncateText } from '../Utils/Data'
+import { formatCurrency, truncateText } from '../Utils/Data'
 
 import styles from './Home.module.scss'
 
 const Home = ({
   amountRaised,
+  goal,
   onAction,
-  organization,
+  organizationName,
   themeColor,
   themeContrast,
+  totalRaised,
 }) => {
   return (
     <>
-      <Header>{truncateText(organization, 35)}</Header>
+      <Header>{truncateText(organizationName, 37)}</Header>
       <p className={styles.amount} style={{ color: themeColor }}>
-        $1,540
+        {formatCurrency.format(goal)}
       </p>
       <ProgressBar
         amountRaised={amountRaised}
-        organization={organization}
+        organizationName={organizationName}
         themeColor={themeColor}
+        goal={goal}
+        totalRaised={totalRaised}
       />
       <Button
         onClick={onAction}
