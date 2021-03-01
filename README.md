@@ -35,6 +35,8 @@ import the `Widget` component and add the following props:
 - themeColor (if none provided, a default theme color will be applied)
 - themeContrast (if none provided, a default theme contrast color will be applied)
 
+See `./src/App.jsx`
+
 ```
       <Widget
         organization={YOURORGANIZATIONNAME}
@@ -43,6 +45,14 @@ import the `Widget` component and add the following props:
         themeContrast={YOURTHEMECONTRASTCOLOR}
       />
 ```
+
+## Data
+
+Mock data is stored in `./src/components/Utils/Data.js`
+
+The `campaignData` object stores the 'Campaign' data for two mock organizations.
+
+The two default 'mock' organizations are: `waterProject` and `foodDriveOrlando`
 
 ## Features
 
@@ -54,3 +64,4 @@ import the `Widget` component and add the following props:
 - Users can interact by adding donation amounts
 - Default `Tiles` allow users to quickly add a donation with one tap
 - Confirmation page after user sends a donation
+- CSS modules/SASS used for styling
