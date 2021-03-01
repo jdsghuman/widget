@@ -1,4 +1,5 @@
 import React from 'react'
+import currency from 'currency.js'
 import Button from '../Button/Button'
 import Header from '../Header/Header'
 import Tiles from '../Tiles/Tiles'
@@ -48,7 +49,7 @@ const DonateForm = ({
           border: `2px solid ${themeColor}`,
         }}
       >
-        Donate {amountRaised > 0 && `$${amountRaised}`}
+        Donate {amountRaised > 0 && `$${currency(amountRaised).value}`}
       </Button>
     </>
   )

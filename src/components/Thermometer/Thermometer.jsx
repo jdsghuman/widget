@@ -22,7 +22,7 @@ const Thermometer = ({ formRef, organization, themeColor, themeContrast }) => {
   }
 
   const onChangeInput = (e) => {
-    setAmountRaised(e.target.value)
+    e.target.value < 1000000 && setAmountRaised(e.target.value)
     setActiveTile(false)
   }
 
