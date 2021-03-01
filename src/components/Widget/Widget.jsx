@@ -21,7 +21,7 @@ const Widget = ({ logo, organization, themeColor, themeContrast }) => {
   )
 }
 
-Widget.PropTypes = {
+Widget.propTypes = {
   logo: PropTypes.string.isRequired,
   organization: PropTypes.string.isRequired,
   themeColor: PropTypes.string.isRequired,
