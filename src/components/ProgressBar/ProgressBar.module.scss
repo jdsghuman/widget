@@ -3,17 +3,6 @@
   flex-direction: column;
   width: 100%;
   font-family: 'Questrial', sans-serif;
-  // &__label {
-  //   display: flex;
-  //   color: rgba(235, 15, 15, 0.9);
-  //   padding: 10px 0;
-  //   font-size: 1rem;
-  //   flex-direction: row;
-  //   font-size: 1.2rem;
-  //   font-weight: 400;
-  //   min-width: 125px;
-  //   padding-top: 0;
-  // }
   &__container {
     align-self: center;
     width: 90%;
@@ -32,12 +21,23 @@
     border-radius: 2px;
     transition: width 0.15s linear;
   }
-  .txt__container {
+  .label__container {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    align-self: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: -6px;
     .message {
       text-transform: uppercase;
+      font-size: 0.7rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      color: #555;
     }
+  }
+  .percentage {
+    font-size: 0.7rem;
+    font-family: 'Lato', sans-serif;
+    color: #888888;
   }
 }

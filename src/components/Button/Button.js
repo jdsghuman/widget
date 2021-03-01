@@ -5,18 +5,29 @@ import styles from './Button.module.scss'
 
 const cx = classNames.bind(styles)
 
-const Button = ({ children, type, className, primary, accent, onClick }) => (
-  <button
-    type={type}
-    className={cx('button', className, {
-      'button--primary': primary,
-      'button--accent': accent,
-    })}
-    onClick={onClick}
-  >
-    {children}
-  </button>
-)
+const Button = ({
+  children,
+  type,
+  className,
+  primary,
+  accent,
+  onClick,
+  style,
+}) => {
+  return (
+    <button
+      type={type}
+      className={cx('button', className, {
+        'button--primary': primary,
+        'button--accent': accent,
+      })}
+      onClick={onClick}
+      style={style}
+    >
+      {children}
+    </button>
+  )
+}
 
 Button.propTypes = {
   type: PropTypes.string.isRequired,
