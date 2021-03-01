@@ -9,7 +9,12 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:testing-library/react',
+    'plugin:jest-dom/recommended',
+    'plugin:react/recommended',
+  ],
   plugins: ['react', 'prettier'],
   // add your custom rules here
   rules: {
