@@ -11,9 +11,7 @@ const Thermometer = ({ formRef, organization, themeColor, themeContrast }) => {
   const [name, setName] = useState('')
   const [amountRaised, setAmountRaised] = useState('')
   const [goal, setGoal] = useState(0)
-  const [showForm, setShowForm] = useState(false)
   const [activeTile, setActiveTile] = useState(false)
-  const [onComplete, setOnComplete] = useState(false)
   const [currentStep, setCurrentStep] = useState(0)
 
   // Mock call to get data
@@ -59,13 +57,23 @@ const Thermometer = ({ formRef, organization, themeColor, themeContrast }) => {
           />
         )
       case 2:
-        return <Confirm />
+        return <Confirm amountRaised={amountRaised} />
     }
   }
 
   useEffect(() => {
     currentStep === 1 && formRef.current.focus()
-  }, [showForm])
+  }, [currentStep])
+
+  useEffect(() => {
+    if (currentStep === 2) {
+      setTimeout(() => {
+        setCurrentStep(0)
+        setAmountRaised('')
+        setActiveTile(false)
+      }, 3000)
+    }
+  }, [currentStep])
 
   return <div className={styles.container}>{getWidgetScreen()}</div>
 }
