@@ -7,7 +7,7 @@
   margin: 5px auto;
   .tile {
     margin: 2px;
-    background: $palette--accent;
+    background: $palette--primary;
     border-radius: 5%;
     padding: 3px 20px;
     width: 22px;
@@ -17,10 +17,10 @@
     cursor: pointer;
     transition: all 0.5s $ease-in--quint;
     &:hover {
-      background: $palette--primary;
+      background: $palette--accent;
     }
     &--active {
-      background: $palette--primary;
+      background: $palette--accent;
     }
   }
 }

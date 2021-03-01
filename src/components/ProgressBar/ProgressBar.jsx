@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './ProgressBar.module.scss'
 
-const ProgressBar = ({ label, themeColor, organization, value }) => (
+const ProgressBar = ({ themeColor, organization, value }) => (
   <div className={styles.progressbar}>
     <div className={styles.label__container}>
       <p className={styles.percentage}>0%</p>
@@ -19,16 +19,12 @@ const ProgressBar = ({ label, themeColor, organization, value }) => (
 )
 
 ProgressBar.propTypes = {
-  label: PropTypes.string,
   value: PropTypes.number,
-  message: PropTypes.string,
   color: PropTypes.string,
 }
 
 ProgressBar.defaultProps = {
-  label: null,
   value: 0,
-  message: null,
 }
 
 export default ProgressBar

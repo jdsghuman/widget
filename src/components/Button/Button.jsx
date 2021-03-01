@@ -13,6 +13,7 @@ const Button = ({
   accent,
   onClick,
   style,
+  disabled,
 }) => {
   return (
     <button
@@ -20,9 +21,11 @@ const Button = ({
       className={cx('button', className, {
         'button--primary': primary,
         'button--accent': accent,
+        'button--disabled': disabled,
       })}
       onClick={onClick}
       style={style}
+      disabled={disabled}
     >
       {children}
     </button>
@@ -31,7 +34,7 @@ const Button = ({
 
 Button.propTypes = {
   type: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   className: PropTypes.string,
 }
 
