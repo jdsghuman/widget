@@ -54,6 +54,14 @@ The `campaignData` object stores the 'Campaign' data for two mock organizations.
 
 The two default 'mock' organizations are: `waterProject` and `foodDriveOrlando`
 
+## Testing
+
+### Unit Tests
+
+Unit tests are located in the `src` folder inside the components folders in files named like `*.test.js`. (Tiles and ProgressBar tests)
+
+- `yarn test` : single run of the unit tests
+
 ## Features
 
 - Widget is reusable
