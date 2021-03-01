@@ -1,7 +1,5 @@
-import React, { createContext } from 'react'
 import currency from 'currency.js'
 import classNames from 'classnames/bind'
-import { truncateText } from '../Utils/Data'
 import styles from './Confirm.module.scss'
 const cx = classNames.bind(styles)
 

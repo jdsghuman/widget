@@ -9,8 +9,8 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
-  plugins: [],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  plugins: ['react', 'prettier'],
   // add your custom rules here
   rules: {
     'react/prop-types': 0,

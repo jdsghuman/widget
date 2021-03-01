@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Button from '../Button/Button'
-import Header from '../Header/Header'
 import Confirm from '../Confirm/Confirm'
 import DonateForm from '../Donate/DonateForm'
 import Home from '../Home/Home'
-import Tiles from '../Tiles/Tiles'
 import { getCampaignData, setCampaignAmountRaised } from '../Utils/Data'
 import styles from './Thermometer.module.scss'
 
