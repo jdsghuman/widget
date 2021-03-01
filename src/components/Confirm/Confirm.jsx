@@ -1,4 +1,5 @@
 import React, { createContext } from 'react'
+import currency from 'currency.js'
 import classNames from 'classnames/bind'
 import { truncateText } from '../Utils/Data'
 import styles from './Confirm.module.scss'
@@ -9,7 +10,9 @@ const Confirmation = ({ amountRaised }) => {
     <div className={styles.container}>
       <p className={styles.text}>Thank you!</p>
       <p className={styles.text__description}>For your donation of</p>
-      <p className={cx('text', 'text__dollar')}>${amountRaised}</p>
+      <p className={cx('text', 'text__dollar')}>
+        ${currency(amountRaised).value}
+      </p>
     </div>
   )
 }
