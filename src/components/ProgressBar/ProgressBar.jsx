@@ -13,6 +13,7 @@ const ProgressBar = ({ goal, themeColor, totalRaised }) => (
     <div className={styles.progressbar__container}>
       <div
         className={styles.progressbar__fill}
+        data-testid="progressBar"
         style={{
           width: `${getProgressBarPercentage(totalRaised, goal)}%`,
           background: themeColor,

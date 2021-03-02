@@ -1,8 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import Tiles from './Tiles'
-
-export const defaultDollarAmount = [5, 10, 25, 50]
+import { defaultDollarAmount } from '../Utils/Data'
 
 const renderConfirm = (props) => ({
   ...render(<Tiles {...props} />),
